@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Failure Prediction</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
+    <!-- <script src='main.js'></script> -->
+</head>
+<body>
+    <main>
+        <div class="grid-container">
+            <div class="left">
+              
+            </div>
+            <div class="main-content">
+                <div class="header">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#news">News</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li style="float:right"><a class="active" href="#about">About</a></li>
+                      </ul>
+                      <div class="headerimg">
+                          <h3>Predicting Failure For Mechanized Oil Equipment</h3>
+                          <!-- <img src="{{ url_for('static',filename='images/img1.jpg') }}"> -->
+                         
+                      </div>
+                </div>
+                <div class="upl-file">
+                    <h3>Please Upload a Json File</h3>
+                    <form method=post enctype=multipart/form-data id="upload-json">
+                        Upload File  <input type=file name=file onchange="clear()"><br>
+                        <!-- <input type=submit value="Upload" id="upload" onclick="upload"> -->
+                        
+                    </form>
+                    <button id="submit">Upload</button><!-- Outside of form -->
+                    <!-- <h5>{{msg}}</h5> -->
+                    <div class="result">
+                        {{msg4}}
+                        {% if msg1 %}
+                        {{msg1}}
+                        {% endif %}
+                        {% if msg2 %}
+                        {{msg2}}
+                        {% endif %}
+                        {% if msg %}
+                        {% set count = namespace(value=0) %}
+                        {% for message in msg %}  
+                        {% set count.value = count.value + 1 %}
+                        <p>Prediction day {{ count.value }} : {{ message }}</p>
+                        {% endfor %}  
+                    
+                        {% endif %}
+                    </div>
+                  
+            </div>
+            <div class="footer">
+               <div class="cp-right">&#169;copyright 2021</div> 
+               <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+              </ul>
+            </div>
+            </div>
+            <div></div>
+        </div>
+    </main>
+    <script type="text/javascript">
+    function clear(){
+        alert("hi")
+        document.getElementById('result').innerHTML=""
+    }
+    function submitForm() {
+        document.getElementById("upload-json").submit()
+        document.getElementById('submit').disabled=false
+        document.getElementById('submit').innerHTML='Upload'
+    }
+
+    document.getElementById('submit').onclick = function() {
+        
+        setTimeout(submitForm, 4000); 
+        document.getElementById('submit').innerHTML='Processing'
+        document.getElementById('submit').disabled=true
+       
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+  html, body{
+      margin:0;
+      padding:0;
+      font-family: Berlin Sans FB;
+  }
+  .grid-container{
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+  }
+  .grid-container > div{
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    text-align: center;;
+  }
+
+.main-content {
+  display: grid;
+  grid-template-rows: 400px 500px 100px;
+  background-color:rgb(219, 191, 191);
+}
+
+.header {
+  /* border: 1px solid red; */
+  padding-top: 0;
+}
+
+.headerimg{
+  position: relative;
+  background-image:
+  linear-gradient(to bottom, rgba(156, 157, 165, 0.52), rgba(59, 49, 57, 0.73)),
+  url('../images/img1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 350px;
+}
+
+.headerimg h3{
+position: absolute;
+top:70px;
+left:5%;
+font-size: 30px;
+color: rgb(228, 222, 240);
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.header li {
+  float: left;
+}
+
+.header li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.header li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+.upl-file {
+}
+.upl-file h3 {
+  margin:20px 0 40px 0;
+  font-size:28px
+}
+input[type=submit], #submit {
+  margin-top: 20px;
+  width: 40%;
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+input[type=file] {
+  width: 60%;
+  padding: 10px;
+  border: 1px solid red;
+}
+.footer {
+  background-color: #111;
+}
+.cp-right{
+  margin: auto;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  margin-top: 30px;
+}
+
+.footer ul li{
+  display: inline;
+ 
+
+}
+.footer ul li a{
+  color: white;
+  padding-right: 20px;
+  text-decoration: none;
+}
